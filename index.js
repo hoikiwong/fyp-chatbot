@@ -51,6 +51,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			sendTextMessage(sender, "Message received")
+			sendGenericMessage(sender)
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
