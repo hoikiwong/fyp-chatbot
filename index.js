@@ -46,7 +46,7 @@ app.post('/webhook/', function(req, res) {
 
         if (event.message && event.message.text) {
             let text = event.message.text
-            replyMessagesEvent(sender, text);
+            replyMessagesEvent(sender, text)
             continue
         }
 
@@ -60,14 +60,7 @@ app.post('/webhook/', function(req, res) {
 
         if (event.postback) {
             let text = JSON.stringify(event.postback)
-
-            setSenderAction(sender, "typing_on")
-            setTimeout(
-                function() {
-                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
-                    sendTextMessageWithQuickReplies(sender, "testing quick replies")
-                    setSenderAction(sender, "typing_off")
-                }, 1500);
+            replyPostBackEvent(sender, text)
             continue
         }
     }
@@ -82,7 +75,7 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 //To-do
 function replyMessagesEvent(sender, text) {
     // if (text === 'Generic') {
-        
+
     // }
 
     //typing 3s -> send message
@@ -96,8 +89,14 @@ function replyMessagesEvent(sender, text) {
 }
 
 //To-do
-function replyPostBackEvent() {
-
+function replyPostBackEvent(sender, text) {
+    setSenderAction(sender, "typing_on")
+    setTimeout(
+        function() {
+            // sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+            sendTextMessageWithQuickReplies(sender, "testing quick replies "+text)
+            setSenderAction(sender, "typing_off")
+        }, 1500);
 }
 
 function sendTextMessage(sender, text) {
