@@ -139,24 +139,24 @@ function sendTextMessageWithQuickReplies(sender, text) {
         "text": text,
         "quick_replies": [{
                 "content_type": "text",
-                "title": "色盲",
+                "title": "color blindness",
                 "payload": "color blindness",
                 // "image_url": "http://example.com/img/red.png"
             },
             {
                 //"content_type": "location"
                 "content_type": "text",
-                "title": "視網膜脫落",
+                "title": "retinal detachment",
                 "payload": "retinal detachment",
             },
             {
                 "content_type": "text",
-                "title": "青光眼",
+                "title": "glaucoma",
                 "payload": "glaucoma"
             },
             {
                 "content_type": "text",
-                "title": "白內障",
+                "title": "cataract",
                 "payload": "cataract"
             }
         ]
