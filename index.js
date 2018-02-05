@@ -66,16 +66,17 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 
 //To-do
 function replyMessagesEvent(sender, text) {
-    // if (text === 'Generic') {
-
-    // }
+	var reply_text = "Message received";
+    if (text === 'hi') {
+    	reply_text = "Hello, " + event.sender
+    }
 
     //typing 3s -> send message
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
         	// ****************** Call API to send message
-            sendTextMessage(sender, "Message received" + text)
+            sendTextMessage(sender, reply_text)
             sendGenericMessage(sender)
             // ******************
 
