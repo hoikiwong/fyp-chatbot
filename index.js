@@ -85,10 +85,10 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
-	var reply_text = text.payload;
+	var reply_text = text;
 	//analyse the text
-	console.log("payload:     " + text.payload)
-	switch(text.payload){
+	console.log("postback text:     " + text)
+	switch(text){
 		case "start_postback":
 			//Get started by user 
 			reply_text = "Choose one eye disease!"
