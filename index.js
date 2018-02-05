@@ -50,7 +50,7 @@ app.post('/webhook/', function(req, res) {
                 continue
             }
 
-            //set sender action - typing on
+            //typing 3s -> send message
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -59,6 +59,15 @@ app.post('/webhook/', function(req, res) {
                     setSenderAction(sender, "typing_off")
                 }, 3000);
         }
+
+
+
+
+
+
+
+
+
         if (event.postback) {
             let text = JSON.stringify(event.postback)
 
@@ -80,7 +89,26 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 // const token = "<FB_PAGE_ACCESS_TOKEN>"
 
 function sendTextMessage(sender, text) {
-    let messageData = { text: text }
+    let messageData = {
+        "text": text,
+        "quick_replies": [
+        	{
+                "content_type": "text",
+                "title": "Search",
+                "payload": "<POSTBACK_PAYLOAD>",
+                "image_url": "http://example.com/img/red.png"
+            },
+            {
+                "content_type": "location"
+            },
+            {
+                "content_type": "text",
+                "title": "Something Else",
+                "payload": "<POSTBACK_PAYLOAD>"
+            }
+        ]
+
+    }
 
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
