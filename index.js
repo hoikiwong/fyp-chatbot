@@ -103,7 +103,7 @@ function sendGenericMessage(sender) {
 						"title": "web url"
 					}, {
 						"type": "postback",
-						"title": "Postback",
+						"title": "Postback1",
 						"payload": "Payload for first element in a generic bubble",
 					}],
 				}, {
@@ -112,7 +112,7 @@ function sendGenericMessage(sender) {
 					"image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 					"buttons": [{
 						"type": "postback",
-						"title": "Postback",
+						"title": "Postback2",
 						"payload": "Payload for second element in a generic bubble",
 					}],
 				}]
