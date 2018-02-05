@@ -50,14 +50,6 @@ app.post('/webhook/', function(req, res) {
             continue
         }
 
-
-
-
-
-
-
-
-
         if (event.postback) {
             let text = JSON.stringify(event.postback)
             replyPostBackEvent(sender, text)
@@ -97,7 +89,8 @@ function replyPostBackEvent(sender, text) {
 	//analyse the text
 	console.log("postback text" + text)
 	switch(text.payload){
-		case "start_postback": 
+		case "start_postback":
+			//Get started by user 
 			reply_text = "Choose one eye disease!"
 	}
 
