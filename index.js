@@ -52,16 +52,16 @@ app.post('/webhook/', function(req, res) {
 
             //set sender action - typing on
             setSenderAction(sender, "typing_on")
-
             sendTextMessage(sender, "Message received" + sender)
+            setSenderAction(sender, "typing_off")
             // sendGenericMessage(sender)
         }
         if (event.postback) {
             let text = JSON.stringify(event.postback)
 
-            //set sender action - typing on
             setSenderAction(sender, "typing_on")
             sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+            setSenderAction(sender, "typing_off")
             continue
         }
     }
