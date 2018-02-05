@@ -90,7 +90,7 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
-	var reply_text;
+	var reply_text = "default value";
 	//analyse the text
 	switch(text){
 		case "start_postback": 
