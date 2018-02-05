@@ -68,7 +68,8 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 function replyMessagesEvent(sender, text) {
 	var reply_text = "Message received";
     if (text === 'hi') {
-    	reply_text = "Hello, " + event.sender
+    	//To-do: using event.sender.id(sender) to get profile such as username
+    	reply_text = "Hello!"
     }
 
     //typing 3s -> send message
