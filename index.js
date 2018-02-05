@@ -75,7 +75,7 @@ function replyMessagesEvent(sender, text) {
     setTimeout(
         function() {
         	// ****************** Call API to send message
-            sendTextMessage(sender, "Message received" + sender)
+            sendTextMessage(sender, "Message received" + text)
             sendGenericMessage(sender)
             // ******************
 
@@ -93,6 +93,7 @@ function replyPostBackEvent(sender, text) {
 		case "start_postback":
 			//Get started by user 
 			reply_text = "Choose one eye disease!"
+			break;
 	}
 
 
