@@ -85,9 +85,9 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
-	var reply_text = "default value";
+	var reply_text = text.payload;
 	//analyse the text
-	console.log("postback text" + text)
+	console.log("payload:     " + text.payload)
 	switch(text.payload){
 		case "start_postback":
 			//Get started by user 
