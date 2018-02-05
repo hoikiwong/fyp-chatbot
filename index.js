@@ -54,8 +54,8 @@ app.post('/webhook/', function(req, res) {
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
-                    // sendTextMessage(sender, "Message received" + sender)
-                    sendGenericMessage(sender)
+                    sendTextMessage(sender, "Message received" + sender)
+                    //sendGenericMessage(sender)
                     setSenderAction(sender, "typing_off")
                 }, 3000);
         }
