@@ -74,7 +74,7 @@ app.post('/webhook/', function(req, res) {
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
-                    sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
                     sendTextMessageWithQuickReplies(sender, "testing quick replies")
                     setSenderAction(sender, "typing_off")
                 }, 1500);
