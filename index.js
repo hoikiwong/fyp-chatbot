@@ -46,18 +46,8 @@ app.post('/webhook/', function(req, res) {
 
         if (event.message && event.message.text) {
             let text = event.message.text
-            if (text === 'Generic') {
-                continue
-            }
-
-            //typing 3s -> send message
-            setSenderAction(sender, "typing_on")
-            setTimeout(
-                function() {
-                    sendTextMessage(sender, "Message received" + sender)
-                    //sendGenericMessage(sender)
-                    setSenderAction(sender, "typing_off")
-                }, 3000);
+            replyMessagesEvent(text);
+            continue
         }
 
 
@@ -89,6 +79,27 @@ app.post('/webhook/', function(req, res) {
 const token = process.env.FB_PAGE_ACCESS_TOKEN
 // const token = "<FB_PAGE_ACCESS_TOKEN>"
 
+//To-do
+function replyMessagesEvent() {
+    // if (text === 'Generic') {
+        
+    // }
+
+    //typing 3s -> send message
+    setSenderAction(sender, "typing_on")
+    setTimeout(
+        function() {
+            sendTextMessage(sender, "Message received" + sender)
+            sendGenericMessage(sender)
+            setSenderAction(sender, "typing_off")
+        }, 3000);
+}
+
+//To-do
+function replyPostBackEvent() {
+
+}
+
 function sendTextMessage(sender, text) {
     let messageData = { text: text }
 
@@ -112,8 +123,7 @@ function sendTextMessage(sender, text) {
 function sendTextMessageWithQuickReplies(sender, text) {
     let messageData = {
         "text": text,
-        "quick_replies": [
-        	{
+        "quick_replies": [{
                 "content_type": "text",
                 "title": "Search",
                 "payload": "<POSTBACK_PAYLOAD>",
