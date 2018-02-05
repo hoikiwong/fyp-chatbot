@@ -102,8 +102,8 @@ function replyPostBackEvent(sender, text) {
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
-            // sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
-            sendTextMessageWithQuickReplies(sender, reply_text)
+            sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+            // sendTextMessageWithQuickReplies(sender, reply_text)
             setSenderAction(sender, "typing_off")
         }, 1500);
 }
