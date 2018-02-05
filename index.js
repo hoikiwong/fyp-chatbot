@@ -103,7 +103,7 @@ function replyPostBackEvent(sender, text) {
     setTimeout(
         function() {
             sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
-            // sendTextMessageWithQuickReplies(sender, reply_text)
+            sendTextMessageWithQuickReplies(sender, reply_text)
             setSenderAction(sender, "typing_off")
         }, 1500);
 }
@@ -134,24 +134,24 @@ function sendTextMessageWithQuickReplies(sender, text) {
         "quick_replies": [{
                 "content_type": "text",
                 "title": "色盲",
-                "payload": "色盲",
+                "payload": "color blindness",
                 // "image_url": "http://example.com/img/red.png"
             },
             {
                 //"content_type": "location"
                 "content_type": "text",
                 "title": "視網膜脫落",
-                "payload": "視網膜脫落",
+                "payload": "retinal detachment",
             },
             {
                 "content_type": "text",
                 "title": "青光眼",
-                "payload": "青光眼"
+                "payload": "glaucoma"
             },
             {
                 "content_type": "text",
                 "title": "白內障",
-                "payload": "白內障"
+                "payload": "cataract"
             }
         ]
 
