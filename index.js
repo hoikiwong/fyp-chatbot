@@ -63,13 +63,9 @@ app.post('/webhook/', function(req, res) {
             let text = JSON.stringify(event.postback)
 
             setSenderAction(sender, "typing_on")
-            setTimeout(
-                function() {
-                    sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
-					setSenderAction(sender, "typing_off")
-					continue
-                }, 1500);
-            
+            sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+            setSenderAction(sender, "typing_off")
+            continue
         }
     }
     res.sendStatus(200)
