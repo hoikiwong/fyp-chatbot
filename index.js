@@ -82,11 +82,11 @@ function replyMessagesEvent(sender, text) {
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
-        	// Call API to send message
+        	// ****************** Call API to send message
             sendTextMessage(sender, "Message received" + sender)
             sendGenericMessage(sender)
-            //
-            
+            // ******************
+
             setSenderAction(sender, "typing_off")
         }, 3000);
 }
@@ -95,7 +95,8 @@ function replyMessagesEvent(sender, text) {
 function replyPostBackEvent(sender, text) {
 	var reply_text = "default value";
 	//analyse the text
-	switch(text){
+	console.log("postback text" + text)
+	switch(text.payload){
 		case "start_postback": 
 			reply_text = "Choose one eye disease!"
 	}
@@ -105,10 +106,10 @@ function replyPostBackEvent(sender, text) {
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
-        	// Call API to send message
+        	// ****************** Call API to send message
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
             sendTextMessageWithQuickReplies(sender, reply_text)
-            // 
+            // ******************
 
             setSenderAction(sender, "typing_off")
         }, 1500);
