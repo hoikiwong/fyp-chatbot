@@ -54,7 +54,7 @@ app.post('/webhook/', function(req, res) {
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
-                    sendTextMessage(sender, "Message received" + sender)
+                    // sendTextMessage(sender, "Message received" + sender)
                     sendGenericMessage(sender)
                     setSenderAction(sender, "typing_off")
                 }, 3000);
@@ -63,8 +63,11 @@ app.post('/webhook/', function(req, res) {
             let text = JSON.stringify(event.postback)
 
             setSenderAction(sender, "typing_on")
-            sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
-            setSenderAction(sender, "typing_off")
+            setTimeout(
+                function() {
+                    sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             continue
         }
     }
