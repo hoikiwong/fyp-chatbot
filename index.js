@@ -75,6 +75,7 @@ app.post('/webhook/', function(req, res) {
             setTimeout(
                 function() {
                     sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
+                    sendTextMessageWithQuickReplies(sender, "testing quick replies")
                     setSenderAction(sender, "typing_off")
                 }, 1500);
             continue
@@ -89,6 +90,26 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 // const token = "<FB_PAGE_ACCESS_TOKEN>"
 
 function sendTextMessage(sender, text) {
+    let messageData = { text: text }
+
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: token },
+        method: 'POST',
+        json: {
+            recipient: { id: sender },
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendTextMessageWithQuickReplies(sender, text) {
     let messageData = {
         "text": text,
         "quick_replies": [
@@ -96,7 +117,7 @@ function sendTextMessage(sender, text) {
                 "content_type": "text",
                 "title": "Search",
                 "payload": "<POSTBACK_PAYLOAD>",
-                "image_url": "http://example.com/img/red.png"
+                // "image_url": "http://example.com/img/red.png"
             },
             {
                 "content_type": "location"
