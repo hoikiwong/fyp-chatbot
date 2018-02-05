@@ -85,10 +85,11 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
-	var reply_text = text;
+	var reply_text = "Postback received!";
 	//analyse the text
-	console.log("Type of postback text:     " + typeof text)
-	switch(text){
+	// console.log("Type of postback text:     " + typeof text)
+	var user_input = JSON.parse(text);
+	switch(user_input.payload){
 		case "start_postback":
 			//Get started by user 
 			reply_text = "Choose one eye disease!"
