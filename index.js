@@ -90,11 +90,20 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
+	var reply_text;
+	//analyse the text
+	switch(text){
+		case "start_postback": 
+			reply_text = "Choose one eye disease!"
+	}
+
+
+
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200), token)
-            sendTextMessageWithQuickReplies(sender, "testing quick replies "+text)
+            sendTextMessageWithQuickReplies(sender, reply_text)
             setSenderAction(sender, "typing_off")
         }, 1500);
 }
@@ -124,17 +133,25 @@ function sendTextMessageWithQuickReplies(sender, text) {
         "text": text,
         "quick_replies": [{
                 "content_type": "text",
-                "title": "Search",
-                "payload": "<POSTBACK_PAYLOAD>",
+                "title": "色盲",
+                "payload": "色盲",
                 // "image_url": "http://example.com/img/red.png"
             },
             {
-                "content_type": "location"
+                //"content_type": "location"
+                "content_type": "text",
+                "title": "視網膜脫落",
+                "payload": "視網膜脫落",
             },
             {
                 "content_type": "text",
-                "title": "Something Else",
-                "payload": "<POSTBACK_PAYLOAD>"
+                "title": "青光眼",
+                "payload": "青光眼"
+            },
+            {
+                "content_type": "text",
+                "title": "白內障",
+                "payload": "白內障"
             }
         ]
 
