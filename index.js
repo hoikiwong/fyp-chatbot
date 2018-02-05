@@ -87,7 +87,7 @@ function replyMessagesEvent(sender, text) {
 function replyPostBackEvent(sender, text) {
 	var reply_text = text;
 	//analyse the text
-	console.log("postback text:     " + text)
+	console.log("Type of postback text:     " + typeof text)
 	switch(text){
 		case "start_postback":
 			//Get started by user 
