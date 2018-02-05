@@ -58,6 +58,8 @@ app.post('/webhook/', function (req, res) {
 			sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
 			continue
 		}
+		//set sender action - typing on
+		setSenderAction(sender, "typing_on")
 	}
 	res.sendStatus(200)
 })
@@ -126,6 +128,24 @@ function sendGenericMessage(sender) {
 		json: {
 			recipient: {id:sender},
 			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
+
+function setSenderAction(sender, action) {
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			sender_action: action,
 		}
 	}, function(error, response, body) {
 		if (error) {
