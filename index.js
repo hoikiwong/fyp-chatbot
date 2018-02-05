@@ -52,11 +52,12 @@ app.post('/webhook/', function(req, res) {
 
             //set sender action - typing on
             setSenderAction(sender, "typing_on")
-            sendTextMessage(sender, "Message received" + sender)
-            sendGenericMessage(sender)
-            sendGenericMessage(sender)
-            setSenderAction(sender, "typing_off")
-            
+            setTimeout(
+                function() {
+                    sendTextMessage(sender, "Message received" + sender)
+                    sendGenericMessage(sender)
+                    setSenderAction(sender, "typing_off")
+                }, 3000);
         }
         if (event.postback) {
             let text = JSON.stringify(event.postback)
