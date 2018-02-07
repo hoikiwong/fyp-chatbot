@@ -97,8 +97,8 @@ function replyMessagesEvent(sender, text) {
             	
             // ******************
             if(text == "色盲" || text = "視網膜脫落" || text == "青光眼" || text =="白內障"){
-            	//sendGenericMessage(sender)
-            	sendButtonTemplate(sender)
+            	sendGenericMessage(sender)
+            	//sendButtonTemplate(sender)
             }
 
             setSenderAction(sender, "typing_off")
