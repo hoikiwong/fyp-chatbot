@@ -67,6 +67,7 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 //To-do
 function replyMessagesEvent(sender, text) {
     var reply_text = "Message received";
+    var defaultCase = false;
 
     switch (text) {
         case "hi":
@@ -85,7 +86,9 @@ function replyMessagesEvent(sender, text) {
 
 
         default:
-            reply_text = text;
+            //reply_text = text;
+            reply_text = "請選擇一種眼疾!"
+            defaultCase = true
     }
 
     //typing 3s -> send text message
@@ -93,13 +96,19 @@ function replyMessagesEvent(sender, text) {
     setTimeout(
         function() {
             // ****************** Call API to send message
-            sendTextMessage(sender, reply_text)
-
-            // ******************
+            
+            if (defaultCase){
+            	sendTextMessageWithQuickReplies(sender, reply_text)
+            } else {
+            	sendTextMessage(sender, reply_text)
+            }
+                   
             if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
                 sendGenericMessage(sender)
                 //sendButtonTemplate(sender)
             }
+
+            // ******************
 
             setSenderAction(sender, "typing_off")
         }, 1500);
