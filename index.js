@@ -229,11 +229,6 @@ function sendGenericMessage(sender) {
             "title": "預防",
             "payload": "classfication"
         },
-        {
-            "type": "postback",
-            "title": "分類",
-            "payload": "classfication"
-        }
     ];
 
     let buttonContent2 = [
