@@ -137,7 +137,7 @@ function sendTextMessageWithQuickReplies(sender, text) {
         "text": text,
         "quick_replies": [{
                 "content_type": "text",
-                "title": "color blindness色盲",
+                "title": "色盲",
                 "payload": "color blindness",
                 // "image_url": "http://example.com/img/red.png"
             },
