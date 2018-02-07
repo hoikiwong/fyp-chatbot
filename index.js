@@ -108,7 +108,7 @@ function replyMessagesEvent(sender, text) {
                 function() {
                     //generic       
                     if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
-                        sendGenericMessage(sender)
+                        sendGenericMessage(sender,text)
                         //sendButtonTemplate(sender)
                     }
                     //generic
@@ -220,40 +220,84 @@ function sendTextMessageWithQuickReplies(sender, text) {
 
 //色盲: 成因 分類 預防 治療方式 遺傳
 //https://kknews.cc/health/nxm23l3.html
-function sendGenericMessage(sender) {
-    let buttonContent1 = [{
-            "type": "postback",
-            "title": "成因",
-            "payload": "cause"
-        },
-        {
-            "type": "postback",
-            "title": "分類",
-            "payload": "classfication"
-        },
-        {
-            "type": "postback",
-            "title": "預防",
-            "payload": "prevention"
-        }
-    ];
+function sendGenericMessage(sender,text) {
+    let buttonContent1;
+    let buttonContent2;
+    switch(text){
+        case "色盲":
+            buttonContent1 = [{
+                    "type": "postback",
+                    "title": "成因",
+                    "payload": "cause"
+                },
+                {
+                    "type": "postback",
+                    "title": "分類",
+                    "payload": "classfication"
+                },
+                {
+                    "type": "postback",
+                    "title": "預防",
+                    "payload": "prevention"
+                }
+            ];
 
-    let buttonContent2 = [{
-            "type": "postback",
-            "title": "遺傳",
-            "payload": "genetic"
-        },
-        {
-            "type": "postback",
-            "title": "治療方式",
-            "payload": "treatment"
-        },
-        {
-            "type": "web_url",
-            "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
-            "title": "更多"
-        }
-    ];
+            buttonContent2 = [{
+                    "type": "postback",
+                    "title": "遺傳",
+                    "payload": "genetic"
+                },
+                {
+                    "type": "postback",
+                    "title": "治療方式",
+                    "payload": "treatment"
+                },
+                {
+                    "type": "web_url",
+                    "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
+                    "title": "更多"
+                }
+            ];
+            break;
+
+        default:
+            buttonContent1 = [
+                {
+                    "type": "postback",
+                    "title": "成因-other",
+                    "payload": "cause"
+                },
+                {
+                    "type": "postback",
+                    "title": "分類-other",
+                    "payload": "classfication"
+                },
+                {
+                    "type": "postback",
+                    "title": "預防-other",
+                    "payload": "prevention"
+                }
+            ];
+
+            buttonContent2 = [
+                {
+                    "type": "postback",
+                    "title": "遺傳-other",
+                    "payload": "genetic"
+                },
+                {
+                    "type": "postback",
+                    "title": "治療方式-other",
+                    "payload": "treatment"
+                },
+                {
+                    "type": "web_url",
+                    "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
+                    "title": "更多-other"
+                }
+            ];
+    }
+    
 
 
     let messageData = {
