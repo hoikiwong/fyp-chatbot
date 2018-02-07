@@ -96,17 +96,25 @@ function replyMessagesEvent(sender, text) {
     setTimeout(
         function() {
             // ****************** Call API to send message
-            
-            if (defaultCase){
-            	sendTextMessageWithQuickReplies(sender, reply_text)
+
+            if (defaultCase) {
+                sendTextMessageWithQuickReplies(sender, reply_text)
             } else {
-            	sendTextMessage(sender, reply_text)
+                sendTextMessage(sender, reply_text)
             }
-                   
-            if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
-                sendGenericMessage(sender)
-                //sendButtonTemplate(sender)
-            }
+
+
+            setTimeout(
+                function() {
+                    //generic       
+                    if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
+                        sendGenericMessage(sender)
+                        //sendButtonTemplate(sender)
+                    }
+                    //generic
+                }, 1000
+            )
+
 
             // ******************
 
@@ -213,8 +221,7 @@ function sendTextMessageWithQuickReplies(sender, text) {
 //色盲: 成因 分類 預防 治療方式 遺傳
 //https://kknews.cc/health/nxm23l3.html
 function sendGenericMessage(sender) {
-    let buttonContent1 = [
-    	{
+    let buttonContent1 = [{
             "type": "postback",
             "title": "成因",
             "payload": "cause"
@@ -231,8 +238,7 @@ function sendGenericMessage(sender) {
         }
     ];
 
-    let buttonContent2 = [
-        {
+    let buttonContent2 = [{
             "type": "postback",
             "title": "遺傳",
             "payload": "genetic"
