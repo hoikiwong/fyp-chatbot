@@ -96,8 +96,9 @@ function replyMessagesEvent(sender, text) {
             sendTextMessage(sender, reply_text)
             	
             // ******************
-            if(text == "色盲"){
-            	sendGenericMessage(sender)
+            if(text == "色盲" || text = "視網膜脫落" || text == "青光眼" || text =="白內障"){
+            	//sendGenericMessage(sender)
+            	sendButtonTemplate(sender)
             }
 
             setSenderAction(sender, "typing_off")
@@ -229,6 +230,50 @@ function sendGenericMessage(sender) {
                         "payload": "Payload for second element in a generic bubble",
                     }],
                 }]
+            }
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: { access_token: token },
+        method: 'POST',
+        json: {
+            recipient: { id: sender },
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function sendButtonTemplate(sender) {
+    let messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text": "Choose one of the followings"
+                "buttons":[
+                	{
+                		"type":"web_url",
+            			"url":"https://www.messenger.com",
+            			"title":"Visit Messenger"
+                	},
+                	{
+                		"type":"web_url",
+            			"url":"https://www.messenger.com",
+            			"title":"Visit Messenger"
+                	},
+                	{
+                		"type":"web_url",
+            			"url":"https://www.messenger.com",
+            			"title":"Visit Messenger"
+                	}
+                ]
             }
         }
     }
