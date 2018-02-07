@@ -228,7 +228,7 @@ function sendTextMessageWithQuickReplies(sender, text) {
     })
 }
 
-//色盲: 成因 分類 預防 治療方式 遺傳
+//色盲: 成因 分類 預防 治療方式 影響
 //https://kknews.cc/health/nxm23l3.html
 function sendGenericMessage(sender,text) {
     let buttonContent1;
@@ -254,8 +254,8 @@ function sendGenericMessage(sender,text) {
 
             buttonContent2 = [{
                     "type": "postback",
-                    "title": "遺傳",
-                    "payload": "genetic-color"
+                    "title": "影響",
+                    "payload": "effect-color"
                 },
                 {
                     "type": "postback",
