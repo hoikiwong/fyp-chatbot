@@ -262,14 +262,14 @@ function sendGenericMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                        "title": "First card",
-                        "subtitle": "Element #1 of an hscroll",
+                        "title": "請選擇以下一項:",
+                        // "subtitle": "Element #1 of an hscroll",
                         // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                         "buttons": buttonContent1
                     },
                     {
-                        "title": "Second card",
-                        "subtitle": "Element #2 of an hscroll",
+                        "title": "請選擇以下一項:",
+                        // "subtitle": "Element #2 of an hscroll",
                         // "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
                         "buttons": buttonContent2
                     }
