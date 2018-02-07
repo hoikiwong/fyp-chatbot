@@ -256,7 +256,7 @@ function sendButtonTemplate(sender) {
             "type": "template",
             "payload": {
                 "template_type": "button",
-                "text": "Choose one of the followings"
+                "text": "Choose one of the followings",
                 "buttons":[
                 	{
                 		"type":"web_url",
