@@ -201,35 +201,54 @@ function sendTextMessageWithQuickReplies(sender, text) {
     })
 }
 
+//色盲: 成因 分類 預防 治療方式 遺傳
+//https://kknews.cc/health/nxm23l3.html
 function sendGenericMessage(sender) {
+    let buttonContent1 = [
+    	{
+            "type": "postback",
+            "title": "成因",
+            "payload": "cause"
+        },
+        {
+            "type": "postback",
+            "title": "分類",
+            "payload": "classfication"
+        }
+    ];
+
+    let buttonContent2 = [
+    	{
+            "type": "web_url",
+            "url": "https://www.messenger.com",
+            "title": "web url"
+        },
+        {
+            "type": "postback",
+            "title": "Postback2",
+            "payload": "Payload for second element in a generic bubble",
+        }
+    ];
+
+
     let messageData = {
         "attachment": {
             "type": "template",
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "First card",
-                    "subtitle": "Element #1 of an hscroll",
-                    // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.messenger.com",
-                        "title": "web url"
-                    }, {
-                        "type": "postback",
-                        "title": "Postback1",
-                        "payload": "Payload for first element in a generic bubble",
-                    }],
-                }, {
-                    "title": "Second card",
-                    "subtitle": "Element #2 of an hscroll",
-                    // "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-                    "buttons": [{
-                        "type": "postback",
-                        "title": "Postback2",
-                        "payload": "Payload for second element in a generic bubble",
-                    }],
-                }]
+                        "title": "First card",
+                        "subtitle": "Element #1 of an hscroll",
+                        // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                        "buttons": buttonContent1
+                    },
+                    {
+                        "title": "Second card",
+                        "subtitle": "Element #2 of an hscroll",
+                        // "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                        "buttons": buttonContent2
+                    }
+                ]
             }
         }
     }
