@@ -72,15 +72,14 @@ function replyMessagesEvent(sender, text) {
     	case "hi":
     		//To-do: using event.sender.id(sender) to get profile such as username
     		reply_text = "Hello!"
-    		break;
+    		break
 
-    	case "色盲":
-    		 reply_text = "收到色盲"
-    		 break;
+    	case "色盲"||"視網膜脫落"||"青光眼"||"白內障":
+    		reply_text = "你已選擇了"+text
+    		break
 
-    	case "視網膜脫落":
-    		reply_text = "收到視網膜脫落"
-    		 break;	
+
+
 
     	default:
     		reply_text = text;
