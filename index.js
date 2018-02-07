@@ -112,7 +112,7 @@ function replyMessagesEvent(sender, text) {
                         //sendButtonTemplate(sender)
                     }
                     //generic
-                }, 1000
+                }, 500
             )
 
 
