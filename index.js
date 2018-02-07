@@ -66,39 +66,39 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 
 //To-do
 function replyMessagesEvent(sender, text) {
-	var reply_text = "Message received";
-   
-    switch(text){
-    	case "hi":
-    		//To-do: using event.sender.id(sender) to get profile such as username
-    		reply_text = "Hello!"
-    		break
+    var reply_text = "Message received";
 
-    	case "色盲":
-    	case "視網膜脫落":
-    	case "青光眼":
-    	case "白內障":
-    		reply_text = "你已選擇了 - "+text
-    		break
+    switch (text) {
+        case "hi":
+            //To-do: using event.sender.id(sender) to get profile such as username
+            reply_text = "Hello!"
+            break
 
-
+        case "色盲":
+        case "視網膜脫落":
+        case "青光眼":
+        case "白內障":
+            reply_text = "你已選擇了 - " + text
+            break
 
 
-    	default:
-    		reply_text = text;
+
+
+        default:
+            reply_text = text;
     }
 
     //typing 3s -> send text message
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
-        	// ****************** Call API to send message
+            // ****************** Call API to send message
             sendTextMessage(sender, reply_text)
-            	
+
             // ******************
-            if(text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text =="白內障"){
-            	//sendGenericMessage(sender)
-            	sendButtonTemplate(sender)
+            if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
+                sendGenericMessage(sender)
+                //sendButtonTemplate(sender)
             }
 
             setSenderAction(sender, "typing_off")
@@ -109,24 +109,24 @@ function replyMessagesEvent(sender, text) {
 
 //To-do
 function replyPostBackEvent(sender, text) {
-	var reply_text = "Postback received!";
-	//analyse the text
-	// console.log("Type of postback text:     " + typeof text)
-	var user_input = JSON.parse(text);
-	switch(user_input.payload){
-		case "start_postback":
-			//Get started by user 
-			reply_text = "請選擇一種眼疾!"
-			break;
+    var reply_text = "Postback received!";
+    //analyse the text
+    // console.log("Type of postback text:     " + typeof text)
+    var user_input = JSON.parse(text);
+    switch (user_input.payload) {
+        case "start_postback":
+            //Get started by user 
+            reply_text = "請選擇一種眼疾!"
+            break;
 
-	}
+    }
 
 
 
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
-        	// ****************** Call API to send message
+            // ****************** Call API to send message
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
             sendTextMessageWithQuickReplies(sender, reply_text)
             // ******************
@@ -210,7 +210,7 @@ function sendGenericMessage(sender) {
                 "elements": [{
                     "title": "First card",
                     "subtitle": "Element #1 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+                    // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                     "buttons": [{
                         "type": "web_url",
                         "url": "https://www.messenger.com",
@@ -223,7 +223,7 @@ function sendGenericMessage(sender) {
                 }, {
                     "title": "Second card",
                     "subtitle": "Element #2 of an hscroll",
-                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+                    // "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
                     "buttons": [{
                         "type": "postback",
                         "title": "Postback2",
@@ -257,22 +257,21 @@ function sendButtonTemplate(sender) {
             "payload": {
                 "template_type": "button",
                 "text": "Choose one of the followings",
-                "buttons":[
-                	{
-                		"type":"web_url",
-            			"url":"https://www.messenger.com",
-            			"title":"Visit Messenger"
-                	},
-                	{
-                		"type":"web_url",
-            			"url":"https://www.messenger.com",
-            			"title":"Visit Messenger"
-                	},
-                	{
-                		"type":"web_url",
-            			"url":"https://www.messenger.com",
-            			"title":"Visit Messenger"
-                	}
+                "buttons": [{
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "Visit Messenger"
+                    },
+                    {
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "Visit Messenger"
+                    },
+                    {
+                        "type": "web_url",
+                        "url": "https://www.messenger.com",
+                        "title": "Visit Messenger"
+                    }
                 ]
             }
         }
