@@ -227,20 +227,25 @@ function sendGenericMessage(sender) {
         {
             "type": "postback",
             "title": "預防",
-            "payload": "classfication"
-        },
+            "payload": "prevention"
+        }
     ];
 
     let buttonContent2 = [
-    	{
-            "type": "web_url",
-            "url": "https://www.messenger.com",
-            "title": "web url"
+        {
+            "type": "postback",
+            "title": "遺傳",
+            "payload": "genetic"
         },
         {
             "type": "postback",
-            "title": "Postback2",
-            "payload": "Payload for second element in a generic bubble",
+            "title": "治療方式",
+            "payload": "treatment"
+        },
+        {
+            "type": "web_url",
+            "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
+            "title": "更多"
         }
     ];
 
