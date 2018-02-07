@@ -74,7 +74,10 @@ function replyMessagesEvent(sender, text) {
     		reply_text = "Hello!"
     		break
 
-    	case "色盲"||"視網膜脫落"||"青光眼"||"白內障":
+    	case "色盲":
+    	case "視網膜脫落":
+    	case "青光眼":
+    	case "白內障":
     		reply_text = "你已選擇了"+text
     		break
 
