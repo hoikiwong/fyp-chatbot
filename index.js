@@ -151,6 +151,14 @@ function replyPostBackEvent(sender, text) {
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             break;
 
+        case "effect-color":
+            reply_text = "自卑感和事業都受影響"
+            //https://kknews.cc/zh-hk/health/3j32na.html
+            break;
+
+        case "treatment-color":
+            reply_text = "沒有真正療法"
+            break;
     }
 
 
