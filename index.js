@@ -223,6 +223,16 @@ function sendGenericMessage(sender) {
             "type": "postback",
             "title": "分類",
             "payload": "classfication"
+        },
+        {
+            "type": "postback",
+            "title": "預防",
+            "payload": "classfication"
+        },
+        {
+            "type": "postback",
+            "title": "分類",
+            "payload": "classfication"
         }
     ];
 
