@@ -164,7 +164,8 @@ function replyPostBackEvent(sender, text) {
             if (user_input.payload=="start_postback"){
                 sendTextMessageWithQuickReplies(sender, reply_text)
             } else {
-                sendTextMessage(sender, reply_text)
+                //sendTextMessage(sender, reply_text)
+                sendTextMessageWithQuickReplies(sender, reply_text)
             }
             
             // ******************
