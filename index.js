@@ -138,6 +138,17 @@ function replyPostBackEvent(sender, text) {
 
         case "cause-color":
             reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
+            //https://read01.com/zh-hk/d0GEgk.html#.Wnrha1T1X-Y
+            break;
+
+        case "classfication-color":
+            reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
+            //https://kknews.cc/zh-hk/health/3j32na.html
+            break;
+
+        case "prevention-color":
+            reply_text = "可以從優生優育和日常飲食方面預防"
+            //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             break;
 
     }
