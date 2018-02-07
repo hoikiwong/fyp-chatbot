@@ -136,6 +136,10 @@ function replyPostBackEvent(sender, text) {
             reply_text = "請選擇一種眼疾!"
             break;
 
+        case "cause-color":
+            reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
+            break;
+
     }
 
 
@@ -145,7 +149,13 @@ function replyPostBackEvent(sender, text) {
         function() {
             // ****************** Call API to send message
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
-            sendTextMessageWithQuickReplies(sender, reply_text)
+
+            if (user_input.payload=="start_postback"){
+                sendTextMessageWithQuickReplies(sender, reply_text)
+            } else {
+                sendTextMessage(sender, reply_text)
+            }
+            
             // ******************
 
             setSenderAction(sender, "typing_off")
@@ -228,29 +238,29 @@ function sendGenericMessage(sender,text) {
             buttonContent1 = [{
                     "type": "postback",
                     "title": "成因",
-                    "payload": "cause"
+                    "payload": "cause-color"
                 },
                 {
                     "type": "postback",
                     "title": "分類",
-                    "payload": "classfication"
+                    "payload": "classfication-color"
                 },
                 {
                     "type": "postback",
                     "title": "預防",
-                    "payload": "prevention"
+                    "payload": "prevention-color"
                 }
             ];
 
             buttonContent2 = [{
                     "type": "postback",
                     "title": "遺傳",
-                    "payload": "genetic"
+                    "payload": "genetic-color"
                 },
                 {
                     "type": "postback",
                     "title": "治療方式",
-                    "payload": "treatment"
+                    "payload": "treatment-color"
                 },
                 {
                     "type": "web_url",
@@ -260,6 +270,7 @@ function sendGenericMessage(sender,text) {
             ];
             break;
 
+//Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
         default:
             buttonContent1 = [
                 {
