@@ -74,6 +74,14 @@ function replyMessagesEvent(sender, text) {
     		reply_text = "Hello!"
     		break;
 
+    	case "色盲":
+    		 reply_text = "收到色盲"
+    		 break;
+
+    	case "視網膜脫落":
+    		reply_text = "視網膜脫落"
+    		 break;	
+
     	default:
     		reply_text = text;
     }
