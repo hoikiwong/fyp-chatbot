@@ -78,7 +78,7 @@ function replyMessagesEvent(sender, text) {
     	case "視網膜脫落":
     	case "青光眼":
     	case "白內障":
-    		reply_text = "你已選擇了"+text
+    		reply_text = "你已選擇了 - "+text
     		break
 
 
