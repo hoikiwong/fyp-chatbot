@@ -79,7 +79,7 @@ function replyMessagesEvent(sender, text) {
     		 break;
 
     	case "視網膜脫落":
-    		reply_text = "視網膜脫落"
+    		reply_text = "收到視網膜脫落"
     		 break;	
 
     	default:
