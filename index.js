@@ -144,17 +144,17 @@ function sendTextMessageWithQuickReplies(sender, text) {
             {
                 //"content_type": "location"
                 "content_type": "text",
-                "title": "retinal detachment",
+                "title": "視網膜脫落",
                 "payload": "retinal detachment",
             },
             {
                 "content_type": "text",
-                "title": "glaucoma",
+                "title": "青光眼",
                 "payload": "glaucoma"
             },
             {
                 "content_type": "text",
-                "title": "cataract",
+                "title": "白內障",
                 "payload": "cataract"
             }
         ]
