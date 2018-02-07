@@ -67,9 +67,15 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 //To-do
 function replyMessagesEvent(sender, text) {
 	var reply_text = "Message received";
-    if (text === 'hi') {
-    	//To-do: using event.sender.id(sender) to get profile such as username
-    	reply_text = "Hello!"
+   
+    switch(text){
+    	case "hi":
+    		//To-do: using event.sender.id(sender) to get profile such as username
+    		reply_text = "Hello!"
+    		break;
+
+    	default:
+    		reply_text = text;
     }
 
     //typing 3s -> send message
@@ -78,11 +84,11 @@ function replyMessagesEvent(sender, text) {
         function() {
         	// ****************** Call API to send message
             sendTextMessage(sender, reply_text)
-            sendGenericMessage(sender)
+            	//sendGenericMessage(sender)
             // ******************
 
             setSenderAction(sender, "typing_off")
-        }, 3000);
+        }, 1500);
 }
 
 //To-do
@@ -94,8 +100,9 @@ function replyPostBackEvent(sender, text) {
 	switch(user_input.payload){
 		case "start_postback":
 			//Get started by user 
-			reply_text = "Choose one eye disease!"
+			reply_text = "請選擇一種眼疾!"
 			break;
+
 	}
 
 
