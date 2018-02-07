@@ -88,17 +88,22 @@ function replyMessagesEvent(sender, text) {
     		reply_text = text;
     }
 
-    //typing 3s -> send message
+    //typing 3s -> send text message
     setSenderAction(sender, "typing_on")
     setTimeout(
         function() {
         	// ****************** Call API to send message
             sendTextMessage(sender, reply_text)
-            	//sendGenericMessage(sender)
+            	
             // ******************
+            if(text == "色盲"){
+            	sendGenericMessage(sender)
+            }
 
             setSenderAction(sender, "typing_off")
         }, 1500);
+
+
 }
 
 //To-do
