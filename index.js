@@ -113,7 +113,7 @@ function replyMessagesEvent(sender, text) {
 
 
         default:
-            reply_text = "請選擇一種眼疾!"
+            reply_text = "唔好意思我唔明白 我仲一步步學緊😢"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
