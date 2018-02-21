@@ -203,14 +203,7 @@ function replyPostBackEvent(sender, text) {
         function() {
             // ****************** Call API to send message
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
-
-            if (user_input.payload == "start_postback") {
-                sendTextMessageWithQuickReplies(sender, reply_text)
-            } else {
-                //sendTextMessage(sender, reply_text)
-                sendTextMessageWithQuickReplies(sender, reply_text)
-            }
-
+            sendTextMessageWithQuickReplies(sender, reply_text)
             // ******************
 
             setSenderAction(sender, "typing_off")
