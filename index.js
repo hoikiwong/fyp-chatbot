@@ -171,27 +171,27 @@ function replyPostBackEvent(sender, text) {
             reply_text = "請選擇一種眼疾!"
             break;
 
-        case "cause-color":
+        case "color-cause":
             reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
             //https://read01.com/zh-hk/d0GEgk.html#.Wnrha1T1X-Y
             break;
 
-        case "classfication-color":
+        case "color-classfication":
             reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 
-        case "prevention-color":
+        case "color-prevention":
             reply_text = "可以從優生優育和日常飲食方面預防"
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             break;
 
-        case "effect-color":
+        case "color-effect":
             reply_text = "自卑感和事業都受影響"
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 
-        case "treatment-color":
+        case "color-treatment":
             reply_text = "沒有真正療法"
             break;
     }
@@ -286,29 +286,29 @@ function sendGenericMessage(sender, text) {
             buttonContent1 = [{
                     "type": "postback",
                     "title": "成因",
-                    "payload": "cause-color"
+                    "payload": "color-cause"
                 },
                 {
                     "type": "postback",
                     "title": "分類",
-                    "payload": "classfication-color"
+                    "payload": "color-classfication"
                 },
                 {
                     "type": "postback",
                     "title": "預防",
-                    "payload": "prevention-color"
+                    "payload": "color-prevention"
                 }
             ];
 
             buttonContent2 = [{
                     "type": "postback",
                     "title": "影響",
-                    "payload": "effect-color"
+                    "payload": "color-effect"
                 },
                 {
                     "type": "postback",
                     "title": "治療方式",
-                    "payload": "treatment-color"
+                    "payload": "color-treatment"
                 },
                 {
                     "type": "web_url",
