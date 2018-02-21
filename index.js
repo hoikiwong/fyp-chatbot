@@ -172,7 +172,9 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "color-cause":
-            reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
+            // reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
+            reply_text = "色盲其實分為色盲同色弱\n色盲就係先天性既缺陷 等G啦\n色弱主要係遺傳 不過後天既眼疾都有可能引致色弱"
+
             //https://read01.com/zh-hk/d0GEgk.html#.Wnrha1T1X-Y
             break;
 
