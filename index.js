@@ -179,12 +179,14 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "color-classfication":
-            reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
+            // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
+            reply_text = "色盲就分為6種 分別有全色盲、紅色盲、綠色盲、藍黃色盲、全色弱 同埋部分色弱"
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 
         case "color-prevention":
-            reply_text = "可以從優生優育和日常飲食方面預防"
+            // reply_text = "可以從優生優育和日常飲食方面預防"
+            reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             break;
 
