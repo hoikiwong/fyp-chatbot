@@ -67,7 +67,7 @@ const token = process.env.FB_PAGE_ACCESS_TOKEN
 //To-do
 function replyMessagesEvent(sender, text) {
     var reply_text = "Message received";
-    var defaultCase = false;
+    // var defaultCase = false;
 
     switch (text) {
         case "hi":
@@ -80,6 +80,23 @@ function replyMessagesEvent(sender, text) {
         case "青光眼":
         case "白內障":
             reply_text = "你已選擇了 - " + text
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    sendTextMessage(sender, reply_text)
+
+                    setTimeout(
+                        function() {
+                            //generic       
+                            sendGenericMessage(sender, text)
+                            //sendButtonTemplate(sender)
+                            //generic
+                        }, 500
+                    )
+                    // ******************
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break
 
 
@@ -88,38 +105,48 @@ function replyMessagesEvent(sender, text) {
         default:
             //reply_text = text;
             reply_text = "請選擇一種眼疾!"
-            defaultCase = true
+            // defaultCase = true
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
+
     }
 
     //typing 3s -> send text message
-    setSenderAction(sender, "typing_on")
-    setTimeout(
-        function() {
-            // ****************** Call API to send message
+    // setSenderAction(sender, "typing_on")
+    // setTimeout(
+    //     function() {
+    //         // ****************** Call API to send message
 
-            if (defaultCase) {
-                sendTextMessageWithQuickReplies(sender, reply_text)
-            } else {
-                sendTextMessage(sender, reply_text)
-            }
-
-
-            setTimeout(
-                function() {
-                    //generic       
-                    if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
-                        sendGenericMessage(sender,text)
-                        //sendButtonTemplate(sender)
-                    }
-                    //generic
-                }, 500
-            )
+    //         if (defaultCase) {
+    //             sendTextMessageWithQuickReplies(sender, reply_text)
+    //         } else {
+    //             sendTextMessage(sender, reply_text)
+    //         }
 
 
-            // ******************
+    //         setTimeout(
+    //             function() {
+    //                 //generic       
+    //                 if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
+    //                     sendGenericMessage(sender,text)
+    //                     //sendButtonTemplate(sender)
+    //                 }
+    //                 //generic
+    //             }, 500
+    //         )
 
-            setSenderAction(sender, "typing_off")
-        }, 1500);
+
+    //         // ******************
+
+    //         setSenderAction(sender, "typing_off")
+    //     }, 1500);
 
 
 }
@@ -169,13 +196,13 @@ function replyPostBackEvent(sender, text) {
             // ****************** Call API to send message
             // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
 
-            if (user_input.payload=="start_postback"){
+            if (user_input.payload == "start_postback") {
                 sendTextMessageWithQuickReplies(sender, reply_text)
             } else {
                 //sendTextMessage(sender, reply_text)
                 sendTextMessageWithQuickReplies(sender, reply_text)
             }
-            
+
             // ******************
 
             setSenderAction(sender, "typing_off")
@@ -250,10 +277,10 @@ function sendTextMessageWithQuickReplies(sender, text) {
 
 //色盲: 成因 分類 預防 治療方式 影響
 //https://kknews.cc/health/nxm23l3.html
-function sendGenericMessage(sender,text) {
+function sendGenericMessage(sender, text) {
     let buttonContent1;
     let buttonContent2;
-    switch(text){
+    switch (text) {
         case "色盲":
             buttonContent1 = [{
                     "type": "postback",
@@ -290,10 +317,9 @@ function sendGenericMessage(sender,text) {
             ];
             break;
 
-//Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
+            //Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
         default:
-            buttonContent1 = [
-                {
+            buttonContent1 = [{
                     "type": "postback",
                     "title": "成因-other",
                     "payload": "cause"
@@ -310,8 +336,7 @@ function sendGenericMessage(sender,text) {
                 }
             ];
 
-            buttonContent2 = [
-                {
+            buttonContent2 = [{
                     "type": "postback",
                     "title": "遺傳-other",
                     "payload": "genetic"
@@ -328,7 +353,7 @@ function sendGenericMessage(sender,text) {
                 }
             ];
     }
-    
+
 
 
     let messageData = {
