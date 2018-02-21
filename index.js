@@ -73,6 +73,16 @@ function replyMessagesEvent(sender, text) {
         case "hi":
             //To-do: using event.sender.id(sender) to get profile such as username
             reply_text = "Hello!"
+            // defaultCase = true
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break
 
         case "色盲":
@@ -103,9 +113,7 @@ function replyMessagesEvent(sender, text) {
 
 
         default:
-            //reply_text = text;
             reply_text = "請選擇一種眼疾!"
-            // defaultCase = true
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
