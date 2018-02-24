@@ -200,7 +200,7 @@ function replyPostBackEvent(sender, text) {
         //     break;
 
         case "color-treatment":
-            reply_text = "沒有真正療法"
+            reply_text = "醫學上暫時無真正既治療方法😢"
             break;
 
         default:
