@@ -171,6 +171,10 @@ function replyPostBackEvent(sender, text) {
             reply_text = "請選擇一種眼疾!"
             break;
 
+        case "color-definition":
+            reply_text = "色盲係對眼分唔清部份甚至全部顏色嘅病"
+            break;
+
         case "color-cause":
             // reply_text = "成因分為先天性和後天性。\n前者是一種遺傳疾病，後者由視器官疾病引起"
             reply_text = "色盲其實分為色盲同色弱\n色盲就係先天性既缺陷 等G啦\n色弱主要係遺傳 不過後天既眼疾都有可能引致色弱"
@@ -198,6 +202,9 @@ function replyPostBackEvent(sender, text) {
         case "color-treatment":
             reply_text = "沒有真正療法"
             break;
+
+        default:
+            reply_text = "未handle呢個postback!"
     }
 
 
