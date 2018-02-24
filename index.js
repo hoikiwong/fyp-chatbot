@@ -287,7 +287,13 @@ function sendGenericMessage(sender, text) {
     let buttonContent2;
     switch (text) {
         case "色盲":
-            buttonContent1 = [{
+            buttonContent1 = [
+                {
+                    "type": "postback",
+                    "title": "定義",
+                    "payload": "color-definition"
+                },
+                {
                     "type": "postback",
                     "title": "成因",
                     "payload": "color-cause"
@@ -296,18 +302,15 @@ function sendGenericMessage(sender, text) {
                     "type": "postback",
                     "title": "分類",
                     "payload": "color-classfication"
-                },
+                }
+              
+            ];
+
+            buttonContent2 = [  
                 {
                     "type": "postback",
                     "title": "預防",
                     "payload": "color-prevention"
-                }
-            ];
-
-            buttonContent2 = [{
-                    "type": "postback",
-                    "title": "影響",
-                    "payload": "color-effect"
                 },
                 {
                     "type": "postback",
