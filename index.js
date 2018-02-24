@@ -113,7 +113,7 @@ function replyMessagesEvent(sender, text) {
 
 
         default:
-            reply_text = "唔好意思我唔明白 我仲一步步學緊😢"
+            reply_text = "Sorry ar 我唔明你講緊咩 我仲慢慢學緊😢"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -194,10 +194,10 @@ function replyPostBackEvent(sender, text) {
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             break;
 
-        case "color-effect":
-            reply_text = "自卑感和事業都受影響"
-            //https://kknews.cc/zh-hk/health/3j32na.html
-            break;
+        // case "color-effect":
+        //     reply_text = "自卑感和事業都受影響"
+        //     //https://kknews.cc/zh-hk/health/3j32na.html
+        //     break;
 
         case "color-treatment":
             reply_text = "沒有真正療法"
