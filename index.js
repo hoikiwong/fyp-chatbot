@@ -287,7 +287,7 @@ function sendTextMessageWithQuickReplies(sender, text) {
     })
 }
 
-//色盲: 成因 分類 預防 治療方式 影響
+//色盲: 定義 成因 分類 預防 治療方法
 //https://kknews.cc/health/nxm23l3.html
 function sendGenericMessage(sender, text) {
     let buttonContent1;
@@ -321,7 +321,7 @@ function sendGenericMessage(sender, text) {
                 },
                 {
                     "type": "postback",
-                    "title": "治療方式",
+                    "title": "治療方法",
                     "payload": "color-treatment"
                 },
                 {
@@ -358,7 +358,7 @@ function sendGenericMessage(sender, text) {
                 },
                 {
                     "type": "postback",
-                    "title": "治療方式-other",
+                    "title": "治療方法-other",
                     "payload": "treatment"
                 },
                 {
