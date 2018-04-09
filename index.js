@@ -184,7 +184,7 @@ function replyPostBackEvent(sender, text) {
 
         case "color-classfication":
             // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
-            reply_text = "色盲就分為6種 分別有全色盲、紅色盲、綠色盲、藍黃色盲、全色弱 同埋部分色弱"
+            reply_text = "色盲分為以下6種:\n全色盲: \n紅色盲:\n綠色盲:\n藍黃色盲:\n全色弱:\n部份色弱:"
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 
