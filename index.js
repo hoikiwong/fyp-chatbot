@@ -164,7 +164,7 @@ function replyPostBackEvent(sender, text) {
             r6 = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
 
             reply_text = r1+r2+r3+r4+r5+r6
-            //https://kknews.cc/zh-hk/health/3j32na.html
+            //https://read01.com/zh-hk/2dOeaj.html#.Wst3XlT1X-Y
             break;
 
         case "color-prevention":
@@ -306,7 +306,7 @@ function sendGenericMessage(sender, text) {
                 {
                     "type": "web_url",
                     "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
-                    "title": "更多"
+                    "title": "更多資訊"
                 }
             ];
             break;
