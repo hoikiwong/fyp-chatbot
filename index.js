@@ -157,7 +157,7 @@ function replyPostBackEvent(sender, text) {
         case "color-classfication":
             // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
             r1 = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮\n"
-            r2 = "紅色盲: \n"
+            r2 = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色\n"
             r3 = "綠色盲: \n"
             r4 = "藍黃色盲: \n"
             r5 = "全色弱: \n"
