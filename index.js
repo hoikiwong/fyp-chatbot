@@ -13,6 +13,7 @@ i have added console.log on line 48
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
+var strings = require('node-strings');
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
@@ -25,6 +26,7 @@ app.use(bodyParser.json())
 
 // index
 app.get('/', function(req, res) {
+    console.log("test".underline())
     res.send('hello world i am a secret bot')
 })
 
@@ -184,7 +186,7 @@ function replyPostBackEvent(sender, text) {
 
         case "color-classfication":
             // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
-            reply_text = "色盲分為以下6種:\n全色盲: \n紅色盲:\n綠色盲:\n藍黃色盲:\n全色弱:\n部份色弱:"
+            reply_text = "色盲分為以下6種:\n全色盲: \n紅色盲:\n綠色盲:\n藍黃色盲:\n全色弱:\n部份色弱:".underline()
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 
