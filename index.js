@@ -13,7 +13,7 @@ i have added console.log on line 48
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
-var strings = require('node-strings');
+// var strings = require('node-strings');
 const app = express()
 
 app.set('port', (process.env.PORT || 5000))
@@ -128,36 +128,6 @@ function replyMessagesEvent(sender, text) {
 
     }
 
-    //typing 3s -> send text message
-    // setSenderAction(sender, "typing_on")
-    // setTimeout(
-    //     function() {
-    //         // ****************** Call API to send message
-
-    //         if (defaultCase) {
-    //             sendTextMessageWithQuickReplies(sender, reply_text)
-    //         } else {
-    //             sendTextMessage(sender, reply_text)
-    //         }
-
-
-    //         setTimeout(
-    //             function() {
-    //                 //generic       
-    //                 if (text == "色盲" || text == "視網膜脫落" || text == "青光眼" || text == "白內障") {
-    //                     sendGenericMessage(sender,text)
-    //                     //sendButtonTemplate(sender)
-    //                 }
-    //                 //generic
-    //             }, 500
-    //         )
-
-
-    //         // ******************
-
-    //         setSenderAction(sender, "typing_off")
-    //     }, 1500);
-
 
 }
 
@@ -186,7 +156,14 @@ function replyPostBackEvent(sender, text) {
 
         case "color-classfication":
             // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
-            reply_text = "色盲分為以下6種:\n全色盲: \n紅色盲:\n綠色盲:\n藍黃色盲:\n全色弱:\n部份色弱:".blue()
+            r1 = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮\n"
+            r2 = "紅色盲: \n"
+            r3 = "綠色盲: \n"
+            r4 = "藍黃色盲: \n"
+            r5 = "全色弱: \n"
+            r6 = "部份色弱: "
+
+            reply_text = r1+r2+r3+r4+r5+r6
             //https://kknews.cc/zh-hk/health/3j32na.html
             break;
 

@@ -1,0 +1,28 @@
+curl -X POST -H "Content-Type: application/json" -d '{
+  "greeting": [
+    {
+      "locale":"default",
+      "text":"{{user_first_name}} 你好, 快來互動地學習眼疾吧！ 按下「開始使用」後，即可開始體驗！" 
+    }, {
+      "locale":"en_US",
+      "text":"Hi {{user_first_name}}, I can teach you eye diseases in an interactive way! Let’s get started!" 
+    }
+  ]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEHjhm26Y0BAFydZAJZAri5HO59WomMi1Enw5NSF3q9ebHU2x1lliIpcnJhMyYVa191yqlMKt95gf0VYiZC2PlIRq7bHicWW1K6ylWrPJgPd2rcFoVCAIZCTBErXinOs6dCZCiGZBn4deq9ZBHgmdZC7ynj0HDZCY2Hm6GxC9wZBVOAZDZD"
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "get_started": {"payload": "start_postback"}
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEHjhm26Y0BAFydZAJZAri5HO59WomMi1Enw5NSF3q9ebHU2x1lliIpcnJhMyYVa191yqlMKt95gf0VYiZC2PlIRq7bHicWW1K6ylWrPJgPd2rcFoVCAIZCTBErXinOs6dCZCiGZBn4deq9ZBHgmdZC7ynj0HDZCY2Hm6GxC9wZBVOAZDZD"
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{
+  "recipient":{
+    "id":"1256013114"
+  },
+  "sender_action":"typing_on"
+}' "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEHjhm26Y0BAFydZAJZAri5HO59WomMi1Enw5NSF3q9ebHU2x1lliIpcnJhMyYVa191yqlMKt95gf0VYiZC2PlIRq7bHicWW1K6ylWrPJgPd2rcFoVCAIZCTBErXinOs6dCZCiGZBn4deq9ZBHgmdZC7ynj0HDZCY2Hm6GxC9wZBVOAZDZD"
