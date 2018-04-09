@@ -172,7 +172,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "color-definition":
-            reply_text = "色盲係對眼分唔清部份 甚至全部顏色嘅病"
+            reply_text = "色盲係對眼分唔清部份 甚至全部顏色嘅病🤔"
             break;
 
         case "color-cause":
