@@ -447,7 +447,7 @@ function sendGenericMessage(sender, text) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                        "title": "",
+                        "title": "請選擇以下一項:",
                         // "subtitle": "Element #1 of an hscroll",
                         // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
                         "buttons": buttonContent1
