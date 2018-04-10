@@ -141,10 +141,31 @@ function replyPostBackEvent(sender, text) {
         case "start_postback":
             //Get started by user 
             reply_text = "請選擇一種眼疾!"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break;
+
 
         case "color-definition":
             reply_text = "色盲係對眼分唔清部份 甚至全部顏色嘅病🤔"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break;
 
         case "color-cause":
@@ -163,41 +184,64 @@ function replyPostBackEvent(sender, text) {
             var r5 = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野\n\n"
             var r6 = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
 
-            reply_text = r1+r2+r3+r4+r5+r6
+            reply_text = r1 + r2 + r3 + r4 + r5 + r6
             //https://read01.com/zh-hk/2dOeaj.html#.Wst3XlT1X-Y
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break;
 
         case "color-prevention":
             // reply_text = "可以從優生優育和日常飲食方面預防"
             reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
-            break;
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
 
-        // case "color-effect":
-        //     reply_text = "自卑感和事業都受影響"
-        //     //https://kknews.cc/zh-hk/health/3j32na.html
-        //     break;
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
+            break;
 
         case "color-treatment":
             reply_text = "醫學上暫時無真正既治療方法😢"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break;
 
         default:
             reply_text = "未handle呢個postback!"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
     }
 
-
-
-    setSenderAction(sender, "typing_on")
-    setTimeout(
-        function() {
-            // ****************** Call API to send message
-            // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
-            sendTextMessageWithQuickReplies(sender, reply_text)
-            // ******************
-
-            setSenderAction(sender, "typing_off")
-        }, 1500);
 }
 
 function sendTextMessage(sender, text) {
@@ -273,8 +317,7 @@ function sendGenericMessage(sender, text) {
     let buttonContent2;
     switch (text) {
         case "色盲":
-            buttonContent1 = [
-                {
+            buttonContent1 = [{
                     "type": "postback",
                     "title": "定義",
                     "payload": "color-definition"
@@ -289,11 +332,10 @@ function sendGenericMessage(sender, text) {
                     "title": "分類",
                     "payload": "color-classfication"
                 }
-              
+
             ];
 
-            buttonContent2 = [  
-                {
+            buttonContent2 = [{
                     "type": "postback",
                     "title": "預防",
                     "payload": "color-prevention"
