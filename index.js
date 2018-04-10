@@ -202,7 +202,7 @@ function replyPostBackEvent(sender, text) {
                     // ****************** Call API to send message
                     // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
                     // sendTextMessageWithQuickReplies(sender, reply_text)
-                    sendListTemplate(sender)
+                    sendGenericMessage(sender, user_input.payload)
                     // ******************
 
                     setSenderAction(sender, "typing_off")
@@ -362,6 +362,44 @@ function sendGenericMessage(sender, text) {
                     "title": "更多"
                 }
             ];
+            break;
+
+        case "color-classfication":
+            buttonContent1 = [{
+                    "type": "postback",
+                    "title": "全色盲",
+                    "payload": "全色盲"
+                },
+                {
+                    "type": "postback",
+                    "title": "紅色盲",
+                    "payload": "紅色盲"
+                },
+                {
+                    "type": "postback",
+                    "title": "綠色盲",
+                    "payload": "綠色盲"
+                }
+
+            ];
+
+            buttonContent2 = [{
+                    "type": "postback",
+                    "title": "藍黃色盲",
+                    "payload": "藍黃色盲"
+                },
+                {
+                    "type": "postback",
+                    "title": "全色弱",
+                    "payload": "全色弱"
+                },
+                {
+                    "type": "postback",
+                    "title": "部份色弱",
+                    "payload": "部份色弱"
+                }
+            ];
+
             break;
 
             //Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
