@@ -222,6 +222,20 @@ function replyPostBackEvent(sender, text) {
                     setSenderAction(sender, "typing_off")
                 }, 1500);
             break;
+            
+        case "紅色盲":
+            reply_text = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
+            break;
 
         case "color-prevention":
             // reply_text = "可以從優生優育和日常飲食方面預防"
