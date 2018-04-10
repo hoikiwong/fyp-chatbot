@@ -359,7 +359,7 @@ function sendGenericMessage(sender, text) {
                 {
                     "type": "web_url",
                     "url": "https://zh.wikipedia.org/wiki/%E8%89%B2%E7%9B%B2",
-                    "title": "更多資訊"
+                    "title": "更多"
                 }
             ];
             break;
@@ -562,7 +562,7 @@ function sendListTemplate(sender) {
         }
     }
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/me/messages',
         qs: { access_token: token },
         method: 'POST',
         json: {
