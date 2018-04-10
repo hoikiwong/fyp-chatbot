@@ -173,6 +173,16 @@ function replyPostBackEvent(sender, text) {
             reply_text = "色盲其實分為色盲同色弱\n色盲就係先天性既缺陷 等G啦😈\n色弱主要係遺傳 不過後天既眼疾都有可能引致色弱"
 
             //https://read01.com/zh-hk/d0GEgk.html#.Wnrha1T1X-Y
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
             break;
 
         case "color-classfication":
