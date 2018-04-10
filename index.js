@@ -186,7 +186,6 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "color-classfication":
-            // reply_text = "色盲分為全色盲、紅色盲、綠色盲、藍黃色盲、全色弱和部分色弱"
             var r1 = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮\n\n"
             var r2 = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色\n\n"
             var r3 = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色\n\n"
@@ -194,7 +193,6 @@ function replyPostBackEvent(sender, text) {
             var r5 = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野\n\n"
             var r6 = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
 
-            reply_text = r1 + r2 + r3 + r4 + r5 + r6
             //https://read01.com/zh-hk/2dOeaj.html#.Wst3XlT1X-Y
             setSenderAction(sender, "typing_on")
             setTimeout(
@@ -220,9 +218,9 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1000);
             break;
-            
+
         case "紅色盲":
             reply_text = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色"
             setSenderAction(sender, "typing_on")
@@ -234,8 +232,65 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1000);
             break;
+
+        case "綠色盲":
+            reply_text = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1000);
+            break;
+
+        case "藍黃色盲":
+            reply_text = "藍黃色盲: 患者分唔到藍色同黃色 但係分辨到紅色同綠色"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1000);
+            break;
+
+        case "全色弱":
+            reply_text = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1000);
+            break;
+
+        case "部份色弱":
+            reply_text = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1000);
+            break;
+
 
         case "color-prevention":
             // reply_text = "可以從優生優育和日常飲食方面預防"
