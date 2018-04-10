@@ -209,6 +209,20 @@ function replyPostBackEvent(sender, text) {
                 }, 1500);
             break;
 
+        case "全色盲":
+            reply_text = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮"
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 1500);
+            break;
+
         case "color-prevention":
             // reply_text = "可以從優生優育和日常飲食方面預防"
             reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
