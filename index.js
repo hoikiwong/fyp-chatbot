@@ -84,7 +84,7 @@ function replyMessagesEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 500);
             break
 
         case "色盲":
@@ -124,7 +124,7 @@ function replyMessagesEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1000);
 
     }
 
@@ -165,7 +165,7 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1000);
             break;
 
         case "color-cause":
@@ -305,7 +305,7 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1200);
             break;
 
         case "color-treatment":
@@ -319,7 +319,7 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 1200);
             break;
 
         default:
@@ -333,7 +333,7 @@ function replyPostBackEvent(sender, text) {
                     // ******************
 
                     setSenderAction(sender, "typing_off")
-                }, 1500);
+                }, 500);
     }
 
 }
