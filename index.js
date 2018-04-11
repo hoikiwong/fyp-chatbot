@@ -186,12 +186,12 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "color-classfication":
-            var r1 = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮\n\n"
-            var r2 = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色\n\n"
-            var r3 = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色\n\n"
-            var r4 = "藍黃色盲: 患者分唔到藍色同黃色 但係分辨到紅色同綠色\n\n"
-            var r5 = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野\n\n"
-            var r6 = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
+            // var r1 = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮\n\n"
+            // var r2 = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色\n\n"
+            // var r3 = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色\n\n"
+            // var r4 = "藍黃色盲: 患者分唔到藍色同黃色 但係分辨到紅色同綠色\n\n"
+            // var r5 = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野\n\n"
+            // var r6 = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
 
             //https://read01.com/zh-hk/2dOeaj.html#.Wst3XlT1X-Y
             setSenderAction(sender, "typing_on")
@@ -293,8 +293,10 @@ function replyPostBackEvent(sender, text) {
 
 
         case "color-prevention":
-            // reply_text = "可以從優生優育和日常飲食方面預防"
-            reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
+            // reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
+            text1 = "優生優育方面: 男色盲患者要同正常人結婚 仲要選擇生仔; 女色盲患者就要同正常人結婚 同埋要揀生女"
+            text2 = "日常飲食方面: 食啲含維生素A同C嘅食物，含鈣鉻食物，鹼性食物 同埋含核黃素食物 都可以預防色盲"
+            reply_text = text1 + "\n" + text2
             //https://read01.com/ge4EN5.html#.WnrmXFT1X-Y
             setSenderAction(sender, "typing_on")
             setTimeout(
