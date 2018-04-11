@@ -72,7 +72,7 @@ function replyMessagesEvent(sender, text) {
     // var defaultCase = false;
 
     switch (text) {
-        case "hi":
+        case "Hi":
             //To-do: using event.sender.id(sender) to get profile such as username
             reply_text = "Hello!"
             // defaultCase = true
@@ -294,7 +294,7 @@ function replyPostBackEvent(sender, text) {
 
         case "color-prevention":
             // reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
-            var text1 = "優生優育方面: 男色盲患者要同正常人結婚 仲要選擇生仔; 女色盲患者就要同正常人結婚 同埋要揀生女"
+            var text1 = "優生優育方面: 男色盲患者要同正常人結婚 仲要選擇生仔👪 女色盲患者都係要同正常人結婚 同埋要揀生女👨‍👩‍👧"
             var text2 = "日常飲食方面: 食啲含維生素A同C嘅食物，含鈣鉻食物，鹼性食物 同埋含核黃素食物 都可以預防色盲"
             reply_text = text1 + "\n\n" + text2
             //https://read01.com/DA3djJ.html#.Ws458dNuaqA
