@@ -208,7 +208,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "全色盲":
-            reply_text = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮"
+            reply_text = "全色盲: 患者只係分到光暗 分唔到顏色 佢地會見到紅色發暗 藍色光亮😞"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -222,7 +222,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "紅色盲":
-            reply_text = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色"
+            reply_text = "紅色盲: 患者主要分唔到紅色 佢地會將綠色當成黃色 紫色當成藍色😟"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -236,7 +236,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "綠色盲":
-            reply_text = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色"
+            reply_text = "綠色盲: 患者主要分唔到綠色 佢地會將綠色睇成灰色或者暗黑色😔"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -250,7 +250,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "藍黃色盲":
-            reply_text = "藍黃色盲: 患者分唔到藍色同黃色 但係分辨到紅色同綠色"
+            reply_text = "藍黃色盲: 患者分唔到藍色同黃色 但係分辨到紅色同綠色🙁"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -264,7 +264,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "全色弱":
-            reply_text = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野"
+            reply_text = "全色弱: 患者分得到顏色鮮明嘅物體 但係分唔到顏色唔飽和嘅野😢"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -278,7 +278,7 @@ function replyPostBackEvent(sender, text) {
             break;
 
         case "部份色弱":
-            reply_text = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色"
+            reply_text = "部份色弱: 患者分為紅色弱、綠色弱同藍黃色弱 咁紅綠色弱就最常見 佢地係暗嘅地方時 會分唔清紅綠色😕"
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
