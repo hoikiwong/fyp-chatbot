@@ -294,8 +294,8 @@ function replyPostBackEvent(sender, text) {
 
         case "color-prevention":
             // reply_text = "你可以透過食野去預防色盲\n食d含維生素A同C既食物 含鈣食物 同埋鹼性食物 會幫到手！"
-            var text1 = "優生優育方面: \n男色盲患者要同正常人結婚 仲要選擇生仔; 女色盲患者就要同正常人結婚 同埋要揀生女"
-            var text2 = "日常飲食方面: \n食啲含維生素A同C嘅食物，含鈣鉻食物，鹼性食物 同埋含核黃素食物 都可以預防色盲"
+            var text1 = "優生優育方面: 男色盲患者要同正常人結婚 仲要選擇生仔; 女色盲患者就要同正常人結婚 同埋要揀生女"
+            var text2 = "日常飲食方面: 食啲含維生素A同C嘅食物，含鈣鉻食物，鹼性食物 同埋含核黃素食物 都可以預防色盲"
             reply_text = text1 + "\n\n" + text2
             //https://read01.com/DA3djJ.html#.Ws458dNuaqA
             setSenderAction(sender, "typing_on")
@@ -314,7 +314,7 @@ function replyPostBackEvent(sender, text) {
             var text1 = "先天性色盲: 醫學上暫時無真正既治療方法😢 但係可以用色盲眼鏡去改善色盲問題👍🏻"
             var text2 = "後天性色盲: 由於眼部或者大腦視覺中樞疾病導致 所以醫好本身嗰病就搞掂啦😎 "
             reply_text = text1 + "\n\n" + text2
-            
+
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
