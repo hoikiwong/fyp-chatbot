@@ -315,6 +315,8 @@ function replyPostBackEvent(sender, text) {
             var text2 = "後天性色盲: 由於眼部或者大腦視覺中樞疾病導致 所以醫好本身嗰病就搞掂啦😎 "
             reply_text = text1 + "\n\n" + text2
 
+            //http://www.jiankanghou.com/jibing/33222.html
+
             setSenderAction(sender, "typing_on")
             setTimeout(
                 function() {
@@ -325,6 +327,21 @@ function replyPostBackEvent(sender, text) {
 
                     setSenderAction(sender, "typing_off")
                 }, 1200);
+            break;
+
+        case "comming soon":
+            reply_text = "The function is comming soon!"
+
+            setSenderAction(sender, "typing_on")
+            setTimeout(
+                function() {
+                    // ****************** Call API to send message
+                    // sendTextMessage(sender, "Postback received: " + text.substring(0, 200))
+                    sendTextMessageWithQuickReplies(sender, reply_text)
+                    // ******************
+
+                    setSenderAction(sender, "typing_off")
+                }, 500);
             break;
 
         default:

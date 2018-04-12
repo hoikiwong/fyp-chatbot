@@ -28,4 +28,149 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "https://graph.facebook.com/v2.6/me/messages?access_token=EAAEHjhm26Y0BAFydZAJZAri5HO59WomMi1Enw5NSF3q9ebHU2x1lliIpcnJhMyYVa191yqlMKt95gf0VYiZC2PlIRq7bHicWW1K6ylWrPJgPd2rcFoVCAIZCTBErXinOs6dCZCiGZBn4deq9ZBHgmdZC7ynj0HDZCY2Hm6GxC9wZBVOAZDZD"
 
 
+------
 
+curl -X POST -H "Content-Type: application/json" -d '{
+"persistent_menu":[
+    {
+    "locale":"default",
+    "composer_input_disabled":false,
+    "call_to_actions":[
+        {
+        "title":"目錄",
+        "type":"nested",
+        "call_to_actions":[
+            {
+              "title":"色盲",
+              "type":"nested",
+              "call_to_actions":[
+                {
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"color-definition"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"color-cause"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"color-classfication"
+                },
+                {
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"color-prevention"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"color-treatment"
+                }
+              ]
+            },
+            {
+              "title":"視網膜脫落",
+              "type":"nested",
+              "call_to_actions":[
+                {
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+              ]
+            },
+            {
+              "title":"青光眼",
+              "type":"nested",
+              "call_to_actions":[
+                {
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+              ]
+            },
+            {
+              "title":"白內障",
+              "type":"nested",
+              "call_to_actions":[
+                {
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+              ]
+            }
+        ]
+        }
+    ]
+    },
+    {
+    "locale":"zh_CN",
+    "composer_input_disabled":false
+    }
+]
+}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAEHjhm26Y0BAFydZAJZAri5HO59WomMi1Enw5NSF3q9ebHU2x1lliIpcnJhMyYVa191yqlMKt95gf0VYiZC2PlIRq7bHicWW1K6ylWrPJgPd2rcFoVCAIZCTBErXinOs6dCZCiGZBn4deq9ZBHgmdZC7ynj0HDZCY2Hm6GxC9wZBVOAZDZD"
