@@ -122,7 +122,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
                   "payload":"comming soon"
                 },
                 {
-                  "title":"預防",
+                  "title":"症狀",
                   "type":"postback",
                   "payload":"comming soon"
                 },

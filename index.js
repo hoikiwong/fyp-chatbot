@@ -431,6 +431,7 @@ function sendTextMessageWithQuickReplies(sender, text) {
 function sendGenericMessage(sender, text) {
     let buttonContent1;
     let buttonContent2;
+    
     switch (text) {
         case "色盲":
             buttonContent1 = [{
@@ -504,10 +505,120 @@ function sendGenericMessage(sender, text) {
                     "payload": "部份色弱"
                 }
             ];
-
             break;
 
-            //Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
+        //Todo: handle other eye diseases (1)retinal detachment, (2)glaucoma, (3)cataract
+        case "視網膜脫落":
+            buttonContent1 = [{
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+
+            ];
+
+            buttonContent2 = [{
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                    "type": "web_url",
+                    "url": "https://zh.wikipedia.org/zh-hk/%E8%A7%86%E7%BD%91%E8%86%9C%E8%84%B1%E8%90%BD",
+                    "title": "更多"
+                }
+            ];
+            break;
+
+        case "青光眼":
+            buttonContent1 = [{
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+
+            ];
+
+            buttonContent2 = [{
+                  "title":"症狀",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                    "type": "web_url",
+                    "url": "https://zh.wikipedia.org/zh-hk/%E9%9D%92%E5%85%89%E7%9C%BC",
+                    "title": "更多"
+                }
+            ];
+            break;
+
+        case "白內障":
+            buttonContent1 = [{
+                  "title":"定義",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"成因",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"分類",
+                  "type":"postback",
+                  "payload":"comming soon"
+                }
+
+            ];
+
+            buttonContent2 = [{
+                  "title":"預防",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                  "title":"治療方法",
+                  "type":"postback",
+                  "payload":"comming soon"
+                },
+                {
+                    "type": "web_url",
+                    "url": "https://zh.wikipedia.org/zh-hk/%E7%99%BD%E5%86%85%E9%9A%9C",
+                    "title": "更多"
+                }
+            ];
+            break;
+
         default:
             buttonContent1 = [{
                     "type": "postback",
